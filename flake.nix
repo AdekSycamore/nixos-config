@@ -33,7 +33,7 @@
       home-lab = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./nixos/configuration.nix
+          ./hosts/x86_64-intel/configuration.nix
           nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
         ];
       };
@@ -45,7 +45,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; 
         extraSpecialArgs = {inherit inputs outputs;};
 
-        modules = [./home-manager/home.nix];
+        modules = [./hosts/x86_64-intel/users/nixos/home.nix];
       };
     };
   };

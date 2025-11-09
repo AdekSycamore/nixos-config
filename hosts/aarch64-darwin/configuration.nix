@@ -19,19 +19,20 @@
   };
 
 
-  nix.settings = {
-  experimental-features = "nix-command flakes";
-  max-jobs = 4;
-};
-  
-  nix.optimise.automatic = true;
-  nix.channel.enable = false;
-
+  nix = {
+    settings = {
+      experimental-features = "nix-command flakes";
+      max-jobs = 4;
+    };
+    
+    optimise.automatic = true;
+    channel.enable = false;
+  };
 
   networking.hostName = "macbook";
 
   users.users.adrian = {
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
   };
 
@@ -43,7 +44,7 @@
      eza
   ];
 
-   programs.fish.enable = true;
+  environment.shells = with pkgs; [ zsh ];
 
   system.stateVersion = 6;
 }

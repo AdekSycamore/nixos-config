@@ -7,9 +7,9 @@
 }: {
 
   imports = [
-    
+    ./config/zsh
+    ./config/starship
   ];
-
   nixpkgs = {
     overlays = [
      
@@ -27,21 +27,10 @@
 
   home.packages = with pkgs; [
     cowsay
-    zsh
     rustc
     cargo
+    bat
   ];
-
-
-  programs.fish.shellAliases = {
-    nixdr = "sudo darwin-rebuild switch --flake ~/.config/nix-darwin";
-    hms = "home-manager switch --flake ~/.config/nix-darwin#adrian@macbook";
-    hmp = "home-manager packages";
-  };
-
-  programs.fish = {
-    enable = true;
-  };
 
   home.sessionVariables = {
       LANG = "en_US.UTF-8";

@@ -43,7 +43,17 @@ in
   programs.fuzzel.enable = true;
   programs.vscode.enable = true;
   programs.firefox.enable = true;
-  programs.git.enable = true;
+
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Adeksycamore";
+        email = "adeksycamore@proton.me";
+      };
+      init.defaultBranch = "main";
+    };
+  };
 
   programs.zen-browser = {
     enable = true;
@@ -72,17 +82,16 @@ in
   };
 
   services.hyprpaper = {
-  enable = true;
-  settings = {
-    preload = [
-      "~/Images/wallhaven-rqyd8j.png"
-    ];
-    wallpaper = [
-      "~/Images/wallhaven-rqyd8j.png"
-    ];
+    enable = true;
+    settings = {
+      preload = [
+        "~/Images/wallhaven-rqyd8j.png"
+      ];
+      wallpaper = [
+        "~/Images/wallhaven-rqyd8j.png"
+      ];
+    };
   };
-};
-
 
   home.pointerCursor = {
     package = pkgs.bibata-cursors;

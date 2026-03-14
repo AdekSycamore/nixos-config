@@ -8,17 +8,26 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
+<<<<<<< HEAD
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
+=======
+  boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+>>>>>>> ead762d (save before merge)
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
+<<<<<<< HEAD
     { device = "/dev/disk/by-uuid/ad353da9-766d-4c97-98e7-56f47c233e11";
+=======
+    { device = "/dev/disk/by-uuid/b26f10cf-87ce-43ee-96a9-42e895931e22";
+>>>>>>> ead762d (save before merge)
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
+<<<<<<< HEAD
     { device = "/dev/disk/by-uuid/E973-BB1A";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
@@ -38,3 +47,15 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
+=======
+    { device = "/dev/disk/by-uuid/A4A7-F8D3";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  swapDevices = [ ];
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+}
+>>>>>>> ead762d (save before merge)

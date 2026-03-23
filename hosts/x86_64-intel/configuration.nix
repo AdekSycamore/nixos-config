@@ -49,7 +49,7 @@
     };
   };
 
-  networking.hostName = "kompostownik";
+  networking.hostName = "kompostownik67";
 
   users.users = {
     adeksycamore = {

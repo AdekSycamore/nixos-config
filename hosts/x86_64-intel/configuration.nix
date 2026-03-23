@@ -38,7 +38,6 @@
     };
 
   boot = {
-
     kernelPackages = pkgs.linuxPackages;
     loader = {
       efi.canTouchEfiVariables = true;
@@ -50,7 +49,7 @@
     };
   };
 
-  networking.hostName = "nixos";
+  networking.hostName = "kompostownik67";
 
   users.users = {
     adeksycamore = {
